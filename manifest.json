@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Ilias automatic login",
+  "version": "1.0",
+  "description": "Automatically logs in on the Ilias study platform and the Campus Management page of KIT.",
+  
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@ilias_automatic_login"
+    }
+  },
+  
+  "icons": {
+    "48": "icons/ilias_logo_48.png",
+    "64": "icons/ilias_logo_64.png",
+    "96": "icons/ilias_logo_96.png",
+    "256": "icons/ilias_logo_256.png"
+  },
+  
+  "content_scripts": [
+  ]
+}
