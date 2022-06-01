@@ -1,8 +1,12 @@
 {
   "manifest_version": 2,
   "name": "Ilias automatic login",
+  "short_name": "Ilias login",
   "version": "1.0",
+  
+  "author": "Karlsruhe dreams",
   "description": "Automatically logs in on the Ilias study platform and the Campus Management page of KIT.",
+  "homepage_url": "https://github.com/karlsruhedreams/ilias_automatic_login",
   
   "browser_specific_settings": {
     "gecko": {
