@@ -18,5 +18,29 @@
   },
   
   "content_scripts": [
+    {
+      "matches": [
+        "https://ilias.studium.kit.edu/*"
+      ],
+      "js": [
+        "ilias_initiate_login.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://campus.studium.kit.edu/*"
+      ],
+      "js": [
+        "campus_initiate_login.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://idp.scc.kit.edu/idp/profile/*"
+      ],
+      "js": [
+        "ilias_login.js"
+      ]
+    }
   ]
 }
