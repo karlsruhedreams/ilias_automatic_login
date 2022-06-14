@@ -1,0 +1,12 @@
+{
+  "addons": {
+    "@ilias_automatic_login": {
+      "updates": [
+        {
+          "version": "2.0",
+          "update_link": "https://raw.githubusercontent.com/karlsruhedreams/ilias_automatic_login/main/update/web-ext-artifacts/ilias_automatic_login-2.0.xpi"
+        }
+      ]
+    }
+  }
+}
