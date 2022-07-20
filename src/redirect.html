@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    <title>
+        ILIAS redirect to course
+    </title>
+
+    <style>
+        div {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="redirecting">
+        <p>Redirect in progress</p>
+    </div>
+
+    <div id="howto" style="display: none;">
+        <h1>How to redirect to a course with the ILIAS automatic login extension</h1>
+        <p>
+            In ILIAS, if you navigate to a course, but you are logged out, after the login procedure the original target
+            URL of the course might disappear and you end up on a general ILIAS-page.
+            To avoid this, you can let the ILIAS automatic login extension handle your redirects.
+        </p>
+        <p>
+            To do this, create a URI of this form: <a>moz-extension://<i>[extension internal
+                    UUID]</i>/redirect.html?redirectUrl=<i>[encoded URL of the course]</i></a>.
+        </p>
+        <p>
+            If you click the button below, an URL of the above kind is created from the URL entered into the text box below, and
+            copied to your clipboard.
+        </p>
+        <input id="inputUrl" type="url">
+        <button id="create" disabled="true">Copy</button>
+        <p id="output" style="color: darkgreen;">
+    </div>
+
+    <script src="/redirect.js"></script>
+</body>
+
+</html>

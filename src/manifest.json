@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Ilias automatic login",
   "short_name": "Ilias login",
-  "version": "2.0",
+  "version": "3.0",
   
   "author": "Karlsruhe dreams",
   "description": "Automatically logs in on the Ilias study platform and the Campus Management page of KIT.",
@@ -47,5 +47,13 @@
         "ilias_login.js"
       ]
     }
+  ],
+
+  "options_ui": {
+    "page": "settings/settings.html"
+  },
+  
+  "permissions": [
+    "storage"
   ]
 }
