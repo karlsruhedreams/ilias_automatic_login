@@ -1,1 +1,1 @@
-window.location.href = "/redirect.html"; // redirect to instuctions about creating a redirect
+window.location.href = "/redirect/create_redirect.html"; // redirect to instuctions about creating a redirect

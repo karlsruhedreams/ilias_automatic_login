@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Ilias automatic login",
   "short_name": "Ilias login",
-  "version": "3.1",
+  "version": "3.2",
   
   "author": "Karlsruhe dreams",
   "description": "Automatically logs in on the Ilias study platform and the Campus Management page of KIT.",
@@ -46,6 +46,15 @@
       "js": [
         "ilias_login.js"
       ]
+    },
+    {
+      "matches": [
+        "https://ilias.studium.kit.edu/redirect",
+        "https://ilias.studium.kit.edu/redirect?redirectUrl*"
+      ],
+      "js": [
+        "redirect/redirect.js"
+      ]
     }
   ],
 
@@ -54,6 +63,8 @@
   },
   
   "permissions": [
-    "storage"
+    "storage",
+    "clipboardRead",
+    "clipboardWrite"
   ]
 }
