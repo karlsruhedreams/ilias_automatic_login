@@ -1,18 +1,23 @@
+const redirectExpirySeconds = 120;
+
 async function checkRedirect() {
     // read and remove the URL from storage to redirect to
-    const sessionStorageRedirectKey = "redirectUrl";
-    const redirectUrl = await browser.storage.local.get(sessionStorageRedirectKey)
-        .then(s => s?.redirectUrl, () => undefined);
+    const sessionStorageRedirectKey = "redirectData";
+    const redirect = await browser.storage.local.get(sessionStorageRedirectKey)
+        .then(s => s?.redirectData, () => undefined);
     await browser.storage.local.remove(sessionStorageRedirectKey);
 
-    if (redirectUrl != null) {
+    if (redirect != null && redirect.url != null && (Date.now() / 1000 - redirect.time < redirectExpirySeconds)) {
         console.log("ILIAS automatic login: redirecting to redirect URL");
 
-        window.location.href = redirectUrl;
+        window.location.href = redirect.url;
 
         return true;
     } else {
-        console.log("ILIAS automatic login: no redirect URL was found");
+        if (redirect?.time == null)
+            console.log("ILIAS automatic login: no redirect URL was found");
+        else
+            console.log("ILIAS automatic login: only expired redirect URL was found");
 
         return false;
     }
@@ -45,8 +50,6 @@ async function checkLogin(retryIfUnsuccessful = true) {
             // If no login button is found, that suggests that we are logged in. Check if there is an url saved for redirecting to
             checkRedirect()
                 .then(async (isRedirectFound) => {
-                    console.log(`CHECKING AGAIN: ${isRedirectFound}`);
-                    
                     // If no redirect was found, try looking for a login again
                     if (!isRedirectFound && retryIfUnsuccessful) {
                         new Promise(resolve => setTimeout(resolve, 500))
@@ -59,5 +62,4 @@ async function checkLogin(retryIfUnsuccessful = true) {
 
 if (!window.location.href.startsWith("https://ilias.studium.kit.edu/redirect")) {
     checkLogin();
-   //setTimeout(checkLogin, 1000);
 }
