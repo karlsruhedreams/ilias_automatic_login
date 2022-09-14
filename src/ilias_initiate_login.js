@@ -30,7 +30,7 @@ async function checkLogin(retryIfUnsuccessful = true) {
         accountButton.click();
     } else {
         // If we're not on the account type page, initiate the login on an Ilias page
-        var submitButton = document.querySelector("button > span[aria-label=\"Anmelden\"]");
+        var submitButton = document.querySelector("span[aria-label=\"Anmelden\"]");
 
         if (submitButton) {
             console.log("ILIAS automatic login: initiating login");

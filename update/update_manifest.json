@@ -3,8 +3,8 @@
     "@ilias_automatic_login": {
       "updates": [
         {
-          "version": "3.3",
-          "update_link": "https://raw.githubusercontent.com/karlsruhedreams/ilias_automatic_login/main/update/web-ext-artifacts/ilias_automatic_login-3.3.xpi"
+          "version": "3.4",
+          "update_link": "https://raw.githubusercontent.com/karlsruhedreams/ilias_automatic_login/main/update/web-ext-artifacts/ilias_automatic_login-3.4.xpi"
         }
       ]
     }
